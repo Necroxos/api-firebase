@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import testRoutes from './test.routes';
+import firebaseRoutes from './firebase.routes';
 
 class IndexRoutes {
     public router: Router;
@@ -10,7 +10,7 @@ class IndexRoutes {
     }
 
     routes() {
-        this.router.use('/test', testRoutes);
+        this.router.use('/appConfig', firebaseRoutes);
     }
 }
 

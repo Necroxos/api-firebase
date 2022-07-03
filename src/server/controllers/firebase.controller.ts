@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
 import { EHttpStatusCode } from '../../enums/EHttpStatusCode';
-import testService from '../services/test.service';
+import firebaseService from '../services/firebase.service';
 
-class TestController {
+class FirebaseController {
 
     public testFoo = async (req: Request, res: Response) => {
         try {
             const { test } = req.query;
             const testParam = String(test);
-            const data = testService.testService(testParam);
+            const data = await firebaseService.testService(testParam);
             return res.status(EHttpStatusCode.Ok).json({ title: 'Controlador funcionando', data });
         } catch (error) {
             return res.status(EHttpStatusCode.InternalServerError).json(error);
@@ -17,5 +17,5 @@ class TestController {
 
 }
 
-const testController = new TestController();
-export default testController;
+const firebaseController = new FirebaseController();
+export default firebaseController;

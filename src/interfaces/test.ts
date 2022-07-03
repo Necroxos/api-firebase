@@ -1,5 +1,5 @@
 export interface ITest {
-    message: string
-    test: string
-    connection: string
+    message: string;
+    test: string;
+    connection: string;
 }

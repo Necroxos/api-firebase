@@ -5,6 +5,7 @@ import cors from 'cors';
 import apiRoutes from './server/api';
 import loadConfig from './config';
 import compression from 'compression';
+import dbConnection from './server/connection';
 
 class Server {
     public app: express.Application;
@@ -17,6 +18,7 @@ class Server {
 
     config() {
         const appConfig = loadConfig.baseConfig();
+        dbConnection.createConnection();
         // Settings
         this.app.set('port', appConfig.PORT);
         // Middlewares
