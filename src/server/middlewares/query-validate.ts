@@ -2,8 +2,8 @@ import { check } from 'express-validator';
 
 class QueryValidator {
 
-    public testValidationRule = () => (
-        check('test').isString().isLength({ min: 4 })
+    public queryValidationRule = () => (
+        check('test').isString().isLength({ min: 4 }).optional()
     );
 }
 
