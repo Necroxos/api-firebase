@@ -8,7 +8,7 @@ class FirebaseService {
      * @returns {string} Test message
      */
     testService = async (test: string): Promise<ITest> => {
-        const db = dbConnection.createConnection();
+        const db = dbConnection.createDB();
         const querySnapshot = await db.collection('appConfig').get();
         const data = querySnapshot.docs[0].data();
         console.log(data);

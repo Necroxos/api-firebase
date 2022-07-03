@@ -10,7 +10,7 @@ class IndexRoutes {
     }
 
     routes() {
-        this.router.use('/test', firebaseRoutes);
+        this.router.use('/appConfig', firebaseRoutes);
     }
 }
 
